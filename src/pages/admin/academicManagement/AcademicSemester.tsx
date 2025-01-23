@@ -14,7 +14,6 @@ const AcademicSemester = () => {
   const [params, setParams] = useState<TQueryParam[] | undefined>(undefined);
   const {
     data: semesterData,
-    isLoading,
     isFetching,
   } = useGetAllSemestersQuery(params);
 

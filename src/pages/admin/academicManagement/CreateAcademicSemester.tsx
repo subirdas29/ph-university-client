@@ -54,7 +54,7 @@ const CreateAcademicSemester = () => {
         }
         try{
             console.log(semesterData)
-            const res = await addAcademicSemester(semesterData) as TResponse
+            const res = await addAcademicSemester(semesterData) as TResponse<typeof semesterData>
             if(res.error){
                 toast.error(res.error.data.message,{id:toastId})
             } else{

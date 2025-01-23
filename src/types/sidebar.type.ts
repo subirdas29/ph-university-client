@@ -16,5 +16,5 @@ export type TUserPath = {
 export type TSidebarItem = {
     key:string,
     label:ReactNode, //path and string tai
-    children?: TSidebarItem[]
-}
+    children?: TSidebarItem[] 
+} | undefined
