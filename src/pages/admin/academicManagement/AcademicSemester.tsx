@@ -18,7 +18,7 @@ const AcademicSemester = () => {
     isFetching,
   } = useGetAllSemestersQuery(params);
 
-  console.log({ isLoading, isFetching });
+  
 
   const tableData = semesterData?.data?.map(
     ({ _id, name, startMonth, endMonth, year }) => ({
@@ -98,19 +98,24 @@ const AcademicSemester = () => {
     _sorter,
     extra
   ) => {
-    if (extra.action === 'filter') {
-      const queryParams: TQueryParam[] = [];
+    console.log({filters,extra})
 
-      filters.name?.forEach((item) =>
-        queryParams.push({ name: 'name', value: item })
-      );
+    if(extra.action=== 'filter'){
+      const queryParams :TQueryParam[] = []
+      filters.name?.forEach((item) => 
+        queryParams.push({name:'name', value:item}
+      ));
 
       filters.year?.forEach((item) =>
-        queryParams.push({ name: 'year', value: item })
-      );
-
-      setParams(queryParams);
+            queryParams.push({ name: 'year', value: item })
+          );
+     
+      setParams(queryParams)
+      
+      
     }
+    
+   
   };
 
   return (
