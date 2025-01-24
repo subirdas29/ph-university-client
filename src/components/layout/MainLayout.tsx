@@ -16,7 +16,7 @@ const handleLogout = ()=>{
 }
   return (
     <div>
-       <Layout style={{height:"100%"}}>
+       <Layout style={{height:"100vh"}}>
      <Sidebar/>
       <Layout>
         <Header>
